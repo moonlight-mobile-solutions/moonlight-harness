@@ -22,7 +22,9 @@ The standard every Moonlight project follows, whoever writes the code: a person,
 
 ## 4. Review before it leaves the machine
 
-- Review the diff before every push (`pair-programming-git-review` locally, then a code-review pass).
+- Two reviews, at different moments:
+  1. **Before each commit:** `pair-programming-git-review` on the staged diff, while the work is in progress.
+  2. **Before each push:** an independent review of the whole branch with the agent's own command: `/code-review` in Claude Code, `/review` in Codex, or the equivalent in other agents. Push only after its findings are fixed or explicitly accepted.
 - Review PRs with inline comments anchored to file and line, in one review, marking blocking findings explicitly and suggesting a fix whenever there is one.
 
 ## 5. Code quality
