@@ -1,0 +1,69 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Skills, secrets and shellcheck
+        run: ./scripts/check.sh
+      - name: Gitleaks (full history)
+        run: docker run --rm -v "$PWD:/repo" ghcr.io/gitleaks/gitleaks:v8.21.2 detect --source /repo --no-banner --redact -v
+      - name: install.sh round trip
+        run: |
+          export HOME="$RUNNER_TEMP/home"
+          ./scripts/install.sh
+          test -L "$HOME/.claude/skills/coding-principles"
+          test -f "$HOME/.agents/skills/flutter-coding-principles/SKILL.md"
+          mkdir -p "$HOME/.claude/skills/git-workflow" && echo old > "$HOME/.claude/skills/git-workflow/SKILL.md"
+          ./scripts/install.sh
+          ./scripts/install.sh --uninstall
+          test "$(cat "$HOME/.claude/skills/git-workflow/SKILL.md")" = old
+          test "$(ls -A "$HOME/.claude/skills")" = git-workflow
+          if ./scripts/install.sh --stack typo; then exit 1; fi
+      - name: link-project.sh
+        run: |
+          project="$RUNNER_TEMP/R&D app"
+          mkdir -p "$project"
+          ./scripts/link-project.sh "$project" --name 'R&D|x' --stack flutter
+          grep -q 'Agent Guidelines for R&D|x' "$project/AGENTS.md"
+          test "$(readlink "$project/.claude/skills")" = ../.agents/skills
+
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: install.ps1 round trip (Windows PowerShell 5.1)
+        shell: powershell
+        run: |
+          $env:USERPROFILE = Join-Path $env:RUNNER_TEMP 'home'
+          New-Item -ItemType Directory -Path "$env:USERPROFILE\.claude\skills\git-workflow" -Force | Out-Null
+          Set-Content "$env:USERPROFILE\.claude\skills\git-workflow\SKILL.md" 'old'
+          .\scripts\install.ps1
+          $link = Get-Item "$env:USERPROFILE\.claude\skills\coding-principles" -Force
+          if ($link.LinkType -ne 'Junction') { throw 'expected a junction' }
+          if (-not (Test-Path "$env:USERPROFILE\.agents\skills\flutter-coding-principles\SKILL.md")) { throw 'skill not readable through the junction' }
+          if (-not (Get-ChildItem "$env:USERPROFILE\.moonlight-harness\backups" -Recurse -Filter SKILL.md)) { throw 'existing skill was not backed up' }
+          .\scripts\install.ps1
+          .\scripts\install.ps1 -Uninstall
+          if ((Get-Content "$env:USERPROFILE\.claude\skills\git-workflow\SKILL.md") -ne 'old') { throw 'backup was not restored' }
+          if ((Get-ChildItem "$env:USERPROFILE\.claude\skills").Count -ne 1) { throw 'uninstall left links behind' }
+          if (-not (Test-Path .\skills\common\coding-principles\SKILL.md)) { throw 'uninstall touched the repo' }
+      - name: link-project.ps1
+        shell: powershell
+        run: |
+          $project = Join-Path $env:RUNNER_TEMP 'myapp'
+          New-Item -ItemType Directory -Path $project | Out-Null
+          .\scripts\link-project.ps1 -Project $project -Stack flutter
+          if (-not (Select-String -Path "$project\AGENTS.md" -Pattern 'myapp' -Quiet)) { throw 'AGENTS.md not rendered' }
+          if (-not (Test-Path "$project\.agents\rules\secrets.md")) { throw 'rules not copied' }

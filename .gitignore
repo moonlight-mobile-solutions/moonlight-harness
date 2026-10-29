@@ -1,0 +1,5 @@
+.DS_Store
+.denylist.local
+# a global gitignore may hide these; this repo must ship them
+!AGENTS.md
+!CLAUDE.md
