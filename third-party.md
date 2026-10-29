@@ -10,3 +10,5 @@ Skills Moonlight projects use but this repo does not maintain or copy. Install t
 | `skill-creator` | all | Anthropic skills, to write new skills in the right format |
 
 `spec-driven-development` is adapted from [jjeanjacques10/skills](https://github.com/jjeanjacques10/skills) (MIT); attribution is in the skill.
+
+`lgpd-brasil` is adapted from [ericbsantana/llm-skills](https://github.com/ericbsantana/llm-skills) (MIT); attribution is in the skill.
