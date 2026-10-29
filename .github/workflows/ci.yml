@@ -25,6 +25,8 @@ jobs:
           ./scripts/install.sh
           test -L "$HOME/.claude/skills/coding-principles"
           test -f "$HOME/.agents/skills/flutter-coding-principles/SKILL.md"
+          ./scripts/install.sh --uninstall
+          test -z "$(ls -A "$HOME/.claude/skills")"
           mkdir -p "$HOME/.claude/skills/git-workflow" && echo old > "$HOME/.claude/skills/git-workflow/SKILL.md"
           ./scripts/install.sh
           ./scripts/install.sh --uninstall
