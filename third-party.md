@@ -12,3 +12,5 @@ Skills Moonlight projects use but this repo does not maintain or copy. Install t
 `spec-driven-development` is adapted from [jjeanjacques10/skills](https://github.com/jjeanjacques10/skills) (MIT); attribution is in the skill.
 
 `lgpd-brasil` is adapted from [ericbsantana/llm-skills](https://github.com/ericbsantana/llm-skills) (MIT); attribution is in the skill.
+
+`ux-writing` is adapted from [content-designer/ux-writing-skill](https://github.com/content-designer/ux-writing-skill) (MIT); attribution and license are in the skill.
