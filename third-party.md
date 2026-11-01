@@ -19,4 +19,6 @@ Install `security-audit` from a clone too. The repo has no installer, so link th
 
 `lgpd-brasil` is adapted from [ericbsantana/llm-skills](https://github.com/ericbsantana/llm-skills) (MIT); attribution is in the skill.
 
+`subagent-delegation` is based on the video "O NOVO JEITO de usar o Claude Code: o Opus vira o chefe (e o Haiku trabalha)"; the source is cited in the skill.
+
 `ux-writing` is adapted from [content-designer/ux-writing-skill](https://github.com/content-designer/ux-writing-skill) (MIT); attribution and license are in the skill.

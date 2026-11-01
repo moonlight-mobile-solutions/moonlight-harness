@@ -13,4 +13,5 @@ Apply to every Moonlight project, whatever the stack. Stack skills build on thes
 | [`pair-programming-git-review`](pair-programming-git-review/SKILL.md) | Review staged changes before committing (skills/common/pair-programming-git-review) |
 | [`pull-request-description`](pull-request-description/SKILL.md) | Describe a PR (skills/common/pull-request-description) |
 | [`repository-pattern-persistence`](repository-pattern-persistence/SKILL.md) | Put persistence behind a repository, Python backend and Flutter frontend (skills/common/repository-pattern-persistence) |
+| [`subagent-delegation`](subagent-delegation/SKILL.md) | Delegate operational work to cheaper sub-agents and review it; set up the `executor` agent (skills/common/subagent-delegation) |
 | [`lgpd-brasil`](lgpd-brasil/SKILL.md) | Check personal-data handling against Brazil's LGPD: legal bases, data subject rights, incidents, international transfer (skills/common/lgpd-brasil) |
