@@ -11,8 +11,8 @@ Based on the video "O NOVO JEITO de usar o Claude Code: o Opus vira o chefe (e o
 
 | Role | Model | Does | Never does |
 |---|---|---|---|
-| Coordinator | Main session (Opus) | Understands the request, plans, splits work, writes briefs, reviews results, talks to the user | Bulk operational work it could brief out |
-| Executor | Sub-agent (Haiku) | Writes scoped code, scaffolds files, reads and summarizes many files, runs builds and tests, reports back | Architecture decisions, plan changes, anything destructive or outward-facing |
+| Coordinator | Main session, strongest model (Opus in Claude Code, Gemini Argon in Antigravity) | Understands the request, plans, splits work, writes briefs, reviews results, talks to the user | Bulk operational work it could brief out |
+| Executor | Sub-agent, cheaper model (Haiku in Claude Code, Flash in Antigravity) | Writes scoped code, scaffolds files, reads and summarizes many files, runs builds and tests, reports back | Architecture decisions, plan changes, anything destructive or outward-facing |
 
 ## When to delegate
 
@@ -55,5 +55,13 @@ Prefer a dedicated agent file over a global switch:
 - **Global switch:** `"env": { "CLAUDE_CODE_SUBAGENT_MODEL": "haiku" }` in `settings.json` forces every sub-agent to Haiku, including code review and security audit agents. Use it only on a machine where cost matters more than review depth.
 - **Coordinator instructions:** add to the project's `AGENTS.md` (or the user's global `CLAUDE.md`) a line telling the main agent to load this skill and use the `executor` agent for operational work.
 - Keep the main session on the strong model (`"model": "opus"` or `/model`).
+
+## Antigravity setup
+
+- **Agent file:** copy [`executor-antigravity.md`](executor-antigravity.md) to `~/.gemini/config/agents/executor.md` (every project) or `.agents/agents/executor.md` (one project). The `model` field takes a tier, not a model ID: `flash` for the executor. `mainAgent: false` keeps it out of the model picker, and `commandExecutionPolicy: sandbox` runs its commands in the sandbox.
+- **Tool names differ from Claude Code** (`view_file`, `grep_search`, `replace_file_content`, `run_command`...). A misspelled name in `tools` can hang the sub-agent.
+- **Coordinator:** pick Gemini Argon (or Claude Opus) in the conversation's model picker; it is not set in any agent file.
+- **Coordinator instructions:** Antigravity reads `~/.gemini/AGENTS.md` (global) and the project's `AGENTS.md`, not `CLAUDE.md`. Put the delegation rule there.
+- Delegation shows up in the Subagents pane of the auxiliary panel.
 
 Other agents (Codex, Gemini CLI, Cursor) follow the same roles with their own sub-agent mechanism; only the setup differs.
