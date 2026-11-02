@@ -1,23 +1,23 @@
-# TASK-N: <Clear description>
+# TASK-N: <Descrição clara>
 
-**Target files:** `<path>` (new | existing)
-**Spec:** section <X.Y>, <FR-NN>
-**Depends on:** TASK-X | none
+**Arquivos-alvo:** `<caminho>` (novo | existente)
+**Spec:** seção <X.Y>, <FR-NN>
+**Depende de:** TASK-X | nenhuma
 
-## Context
+## Contexto
 
-<Why this task exists and what is wrong or missing today.>
+<Por que esta tarefa existe e o que está errado ou faltando hoje.>
 
-## What to do
+## O que fazer
 
-<Specific, implementable steps. For existing code, show before and after.>
+<Passos específicos e implementáveis. Para código existente, mostre antes e depois.>
 
-## Implementation notes
+## Notas de implementação
 
-<Traps, non-obvious decisions, side effects, things from "What does not change" this task is close to.>
+<Armadilhas, decisões não óbvias, efeitos colaterais, e itens de "O que não muda" que esta tarefa toca.>
 
-## Acceptance criteria
+## Critérios de aceite
 
-- [ ] <true-or-false check>
-- [ ] Docs touched by this behavior are updated (if any).
-- [ ] Analyzer and the relevant tests pass.
+- [ ] <verificação verdadeira ou falsa>
+- [ ] Docs afetados por este comportamento estão atualizados (se houver).
+- [ ] Analyzer e os testes relevantes passam.

@@ -9,7 +9,7 @@ description: "Writing structured GitHub issues: native Issue Type usage (Feature
 
 - **No emojis** anywhere in the title or body.
 - **Titles are concise and specific**: describe the problem/feature in one sentence, skip verbs like "fix"/"add" unless they clarify meaning.
-- **Plain English**, present tense, active voice.
+- **Plain PT-BR** (the harness language for issues, `harness/principles.md`), present tense, active voice. The templates below are already in PT-BR.
 - **Use GitHub's native Issue Type** (`Feature`, `Bug`, `Enhancement`, `Task`) via `--type` at creation time: don't rely on labels for type; reserve labels for area/priority tagging.
 - **Acceptance criteria are mandatory**: they define when the issue is done.
 - **Priority is mandatory** in the description (`P0 - Critical` / `P1 - Medium` / `P2 - Low`, or the repo's equivalent scale) with a brief justification.
@@ -39,138 +39,138 @@ Creating a *new* org-level issue type changes shared, org-wide configuration: co
 ## Feature Issue Template
 
 ```markdown
-## Description
+## Descrição
 
-<One paragraph: what this feature is, why it's needed, the user need or business requirement it addresses.>
+<Um parágrafo: o que é esta funcionalidade, por que ela é necessária e qual necessidade do usuário ou requisito de negócio atende.>
 
-## Acceptance criteria
+## Critérios de aceite
 
-- [ ] <Criterion 1: observable, testable behaviour>
-- [ ] <Criterion 2>
+- [ ] <Critério 1: comportamento observável e testável>
+- [ ] <Critério 2>
 
-## Test scenarios
+## Cenários de teste
 
-**Unit**
-- Given <precondition>, When <action>, Then <expected result>.
+**Unitário**
+- Dado <pré-condição>, Quando <ação>, Então <resultado esperado>.
 
 **Widget**
-- Given <initial rendering>, When <interaction>, Then <expected rendering/trigger>.
+- Dado <renderização inicial>, Quando <interação>, Então <renderização ou gatilho esperado>.
 
-**Integration**
-- Given <starting screen>, When <end-to-end flow>, Then <expected final state>.
+**Integração**
+- Dado <tela inicial>, Quando <fluxo de ponta a ponta>, Então <estado final esperado>.
 
-## Priority
-**<P0/P1/P2>** - <Brief justification>
+## Prioridade
+**<P0/P1/P2>** - <Justificativa breve>
 
-## Out of scope
+## Fora do escopo
 
-<Explicitly excluded scope, if any.>
+<Escopo excluído explicitamente, se houver.>
 ```
 
 ## Bug Issue Template
 
 ```markdown
-## Description
+## Descrição
 
-<What happens, where, and the impact.>
+<O que acontece, onde e qual é o impacto.>
 
-## Steps to reproduce
+## Passos para reproduzir
 
-1. <Step 1>
-2. Observe: <what actually happens>
+1. <Passo 1>
+2. Observe: <o que realmente acontece>
 
-## Expected behaviour
+## Comportamento esperado
 
-<What should happen.>
+<O que deveria acontecer.>
 
-## Actual behaviour
+## Comportamento atual
 
-<What currently happens: be specific, include error messages/wrong values.>
+<O que acontece hoje: seja específico, inclua mensagens de erro e valores errados.>
 
-## Environment
+## Ambiente
 
-- Device / OS version / app version, as applicable
+- Dispositivo / versão do SO / versão do app, conforme aplicável
 
-## Priority
-**<P0/P1/P2>** - <Brief justification>
+## Prioridade
+**<P0/P1/P2>** - <Justificativa breve>
 
-## Acceptance criteria
+## Critérios de aceite
 
-- [ ] The bug no longer occurs under the stated reproduction steps.
+- [ ] O bug não ocorre mais nos passos de reprodução informados.
 ```
 
 ## Enhancement Issue Template
 
 ```markdown
-## Description
+## Descrição
 
-<What currently exists, its limitation, and the proposed improvement.>
+<O que existe hoje, sua limitação e a melhoria proposta.>
 
-## Motivation
+## Motivação
 
-<Why this matters: performance, DX, UX, tech debt.>
+<Por que isso importa: performance, DX, UX, dívida técnica.>
 
-## Acceptance criteria
+## Critérios de aceite
 
-- [ ] <Criterion 1>
+- [ ] <Critério 1>
 
-## Priority
-**<P0/P1/P2>** - <Brief justification>
+## Prioridade
+**<P0/P1/P2>** - <Justificativa breve>
 ```
 
 ## Task (Chore) Issue Template
 
 ```markdown
-## Description
+## Descrição
 
-<One sentence describing the task.>
+<Uma frase descrevendo a tarefa.>
 
-## Motivation
+## Motivação
 
-<Why: security fix, deprecated API, tooling improvement, etc.>
+<Por que: correção de segurança, API descontinuada, melhoria de ferramentas, etc.>
 
-## Priority
-**<P0/P1/P2>** - <Brief justification>
+## Prioridade
+**<P0/P1/P2>** - <Justificativa breve>
 
-## Acceptance criteria
+## Critérios de aceite
 
-- [ ] <Criterion 1>
+- [ ] <Critério 1>
 ```
 
 ## Worked Example
 
 ```bash
 gh issue create \
-  --title "Category filter chips on the product catalog screen" \
+  --title "Chips de filtro por categoria na tela de catálogo de produtos" \
   --type "Feature" \
   --label "priority:p1-high,frontend" \
   --body-file feature_body.md
 ```
 
 ```markdown
-## Description
+## Descrição
 
-Users currently cannot filter items by category in the catalog view. Adding category chips allows quickly locating items without scrolling the full catalog.
+Hoje o usuário não consegue filtrar itens por categoria na visualização do catálogo. Adicionar chips de categoria permite localizar itens rapidamente, sem rolar o catálogo inteiro.
 
-## Acceptance criteria
+## Critérios de aceite
 
-- [ ] Category filter chips are visible at the top of the catalog screen.
-- [ ] Selecting a category filters the list to that category.
-- [ ] Selecting "All" restores the full list.
-- [ ] Unit tests cover the category filter logic in the catalog cubit.
+- [ ] Os chips de filtro por categoria ficam visíveis no topo da tela de catálogo.
+- [ ] Selecionar uma categoria filtra a lista para essa categoria.
+- [ ] Selecionar "Todas" restaura a lista completa.
+- [ ] Testes unitários cobrem a lógica de filtro por categoria no cubit do catálogo.
 
-## Test scenarios
+## Cenários de teste
 
-**Unit**
-- Given a loaded catalog, When `applyCategoryFilter(categoryId)` is called, Then the state's filtered list contains only matching items.
+**Unitário**
+- Dado um catálogo carregado, Quando `applyCategoryFilter(categoryId)` é chamado, Então a lista filtrada do estado contém apenas os itens correspondentes.
 
 **Widget**
-- Given the catalog page rendered with items, When a category chip is tapped, Then only matching cards are rendered.
+- Dado a página de catálogo renderizada com itens, Quando um chip de categoria é tocado, Então apenas os cards correspondentes são renderizados.
 
-## Priority
-**P1 - Medium** - Speeds up browsing but doesn't block the core flow.
+## Prioridade
+**P1 - Medium** - Agiliza a navegação, mas não bloqueia o fluxo principal.
 
-## Out of scope
+## Fora do escopo
 
-- Multi-category select (single active filter only).
+- Seleção de várias categorias (apenas um filtro ativo por vez).
 ```

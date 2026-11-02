@@ -13,7 +13,7 @@ Standing rules live in [`.agents/rules/`](.agents/rules/). Read them at the star
 - Plan approved before any code change.
 - Branch per issue, Conventional Commits, no AI co-author trailers.
 - Quality gate before "done", code review before push.
-- TODO: language of issues, PRs and docs.
+- Issues, PRs and docs in PT-BR; commit messages, code and identifiers in English.
 
 ## Skills
 

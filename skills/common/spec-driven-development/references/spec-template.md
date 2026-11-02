@@ -1,97 +1,97 @@
-# SPEC: <Feature title>
+# SPEC: <Título da funcionalidade>
 
-Sections marked `lite` are the only ones required for a size M spec. Size L fills every section that applies; delete the ones that do not, never leave placeholders.
+As seções marcadas com `lite` são as únicas obrigatórias numa spec de tamanho M. O tamanho L preenche todas as seções que se aplicam: apague as que não se aplicam e nunca deixe marcadores sem preencher.
 
-**Issue:** <link> · **Requirement:** <id, if the project uses them> · **Size:** <M | L> · **Status:** <draft | approved | shipped>
+**Issue:** <link> · **Requisito:** <id, se o projeto usar> · **Tamanho:** <M | L> · **Status:** <rascunho | aprovada | entregue>
 
-## 1. Context and problem `lite`
+## 1. Contexto e problema `lite`
 
-<Current state and why it matters now, in at most 3 short paragraphs. Link the issue instead of repeating it.>
+<Estado atual e por que importa agora, em no máximo 3 parágrafos curtos. Referencie a issue em vez de repetir o conteúdo dela.>
 
-## 2. Scope `lite`
+## 2. Escopo `lite`
 
-### 2.1 What changes
+### 2.1 O que muda
 
-| Area | Today | After |
+| Área | Hoje | Depois |
 |---|---|---|
-| `<file or component>` | <current behavior> | <expected behavior> |
+| `<arquivo ou componente>` | <comportamento atual> | <comportamento esperado> |
 
-### 2.2 What does not change
+### 2.2 O que não muda
 
-- <adjacent behavior, file or flow the implementation must leave alone>
-- <scope that moved to another issue: #N>
+- <comportamento adjacente, arquivo ou fluxo que a implementação deve deixar intacto>
+- <escopo que foi para outra issue: #N>
 
-### 2.3 Constraints and assumptions
+### 2.3 Restrições e premissas
 
-- <library version, platform limit, decision already taken, deadline>
+- <versão de biblioteca, limite da plataforma, decisão já tomada, prazo>
 
-## 3. Functional requirements `lite`
+## 3. Requisitos funcionais `lite`
 
-| ID | Requirement | Covers |
+| ID | Requisito | Cobre |
 |---|---|---|
-| FR-01 | <The system must...> | <issue acceptance criterion> |
+| FR-01 | <O sistema deve...> | <critério de aceite da issue> |
 
-## 4. Scenarios and edge cases `lite`
+## 4. Cenários e casos de borda `lite`
 
-- **Main:** Given <state>, when <action>, then <observable result>.
-- **Edge:** <permission denied, offline, missing data, duplicate event, partial failure...>
+- **Principal:** Dado <estado>, quando <ação>, então <resultado observável>.
+- **Borda:** <permissão negada, offline, dado ausente, evento duplicado, falha parcial...>
 
-## 5. Solution design
+## 5. Desenho da solução
 
-### 5.1 Overview
+### 5.1 Visão geral
 
-<How the parts fit, in a few lines.>
+<Como as partes se encaixam, em poucas linhas.>
 
-### 5.2 <Module or layer>
+### 5.2 <Módulo ou camada>
 
-<Change with references to real files, functions and approximate lines.>
+<Mudança com referências a arquivos, funções e linhas aproximadas reais.>
 
-### 5.3 Contracts and data
+### 5.3 Contratos e dados
 
 ```text
-<Compilable snippet in the project's language: payloads, schemas, signatures, rules>
+<Trecho compilável na linguagem do projeto: payloads, schemas, assinaturas, regras>
 ```
 
-## 6. Flow
+## 6. Fluxo
 
-<Diagram of the new data or user flow, in the format the project skill requires.>
+<Diagrama do novo fluxo de dados ou do usuário, no formato que a skill do projeto exige.>
 
-## 7. Alternatives considered
+## 7. Alternativas consideradas
 
-| Alternative | Why not |
+| Alternativa | Por que não |
 |---|---|
-| <option> | <trade-off that ruled it out> |
+| <opção> | <trade-off que a descartou> |
 
-## 8. Affected files `lite`
+## 8. Arquivos afetados `lite`
 
-| File | Type | Change |
+| Arquivo | Tipo | Mudança |
 |---|---|---|
-| `<path>` | Modify | <short description> |
-| `<path>` | Create | <short description> |
+| `<caminho>` | Modificar | <descrição curta> |
+| `<caminho>` | Criar | <descrição curta> |
 
-## 9. Non-functional requirements
+## 9. Requisitos não funcionais
 
-| Category | Requirement | How to check |
+| Categoria | Requisito | Como verificar |
 |---|---|---|
-| Security / privacy | | |
-| Reliability | | |
-| Accessibility | | |
-| Observability | | |
+| Segurança / privacidade | | |
+| Confiabilidade | | |
+| Acessibilidade | | |
+| Observabilidade | | |
 
-## 10. Rollout
+## 10. Implantação
 
-<Flag, migration, backward compatibility, deploy order across app and backend, fallback.>
+<Flag, migração, compatibilidade com versões anteriores, ordem de deploy entre app e backend, fallback.>
 
-## 11. Validation and acceptance criteria `lite`
+## 11. Validação e critérios de aceite `lite`
 
-- Unit / widget: <scope>
-- Integration / backend: <scope>
-- e2e or manual: <scenarios from section 4>
+- Unitário / widget: <escopo>
+- Integração / backend: <escopo>
+- e2e ou manual: <cenários da seção 4>
 
-- [ ] <true-or-false criterion>
-- [ ] Error and fallback cases from section 4 behave as described.
-- [ ] Analyzer, build and the relevant tests pass with no regression.
+- [ ] <critério verdadeiro ou falso>
+- [ ] Casos de erro e fallback da seção 4 se comportam como descrito.
+- [ ] Analyzer, build e os testes relevantes passam sem regressão.
 
-## 12. Open questions
+## 12. Perguntas em aberto
 
-- <pending decision, owner>
+- <decisão pendente, responsável>

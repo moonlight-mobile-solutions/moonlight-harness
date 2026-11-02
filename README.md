@@ -72,6 +72,8 @@ A skill that already exists with the same name is moved to `~/.moonlight-harness
 
 Creates `AGENTS.md`, `CLAUDE.md`, `.agents/skills/`, `.agents/rules/` and the `.claude/skills` link, without overwriting anything. Details in [`harness/project-setup.md`](harness/project-setup.md).
 
+Language: issues, PRs and project docs in Brazilian Portuguese (PT-BR); commit messages always in English. See [`harness/principles.md`](harness/principles.md).
+
 Windows and the committed `.claude/skills` symlink: turn on Developer Mode and run `git config --global core.symlinks true` before cloning a project, otherwise Git checks the link out as a plain text file.
 
 ## Contributing
@@ -92,7 +94,7 @@ Windows and the committed `.claude/skills` symlink: turn on Developer Mode and r
 O harness define como a Moonlight desenvolve software com agentes de IA. Ele tem três partes: o padrão que todo projeto segue, as skills compartilhadas por stack e os instaladores que deixam tudo igual no Claude Code, Codex, Gemini CLI, Cursor e Copilot, em macOS, Linux e Windows.
 
 1. Clone o repo e rode `./scripts/install.sh` (macOS/Linux) ou `.\scripts\install.ps1` (Windows). Comece com `--dry-run` / `-DryRun` para ver o que muda.
-2. Em cada projeto, rode `link-project` e preencha os `TODO` do `AGENTS.md`.
+2. Em cada projeto, rode `link-project` e preencha os `TODO` do `AGENTS.md`. Issues, PRs e documentação ficam em PT-BR; mensagens de commit, sempre em inglês.
 3. Skill de projeto só tem o que é do projeto e cita a skill compartilhada em que se apoia.
 4. Para atualizar, rode `git pull` no clone, porque as skills são links.
 

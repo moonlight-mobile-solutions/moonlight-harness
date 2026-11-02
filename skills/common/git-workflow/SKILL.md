@@ -40,6 +40,7 @@ Optional body describing delivered behavior.
 Types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`.
 
 **Title guidelines:**
+- Always in English, title and body, even when the issue, PR and docs are in PT-BR (`harness/principles.md`).
 - Focus on user-visible or architectural outcome (component/scope + behavior), e.g. `feat(customers): add pagination and loading state to customer list (#23)`.
 - Under ~72 characters where possible.
 - Don't reference the review process (~~`fix: address PR feedback`~~), list modified files (~~`refactor: update customers_cubit and page`~~), or use a vague title (~~`fix`~~, ~~`wip`~~).

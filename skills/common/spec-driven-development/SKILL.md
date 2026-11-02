@@ -7,7 +7,9 @@ description: "Spec-driven development (SDD) workflow for AI-assisted coding: siz
 
 Adapted from [jjeanjacques10/skills `spec-driven-build`](https://github.com/jjeanjacques10/skills/tree/main/skills/development/spec-driven-build) (MIT, Jean Jacques Barros), with the critiques from [Martin Fowler's review of SDD tools](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) folded in: match the process to the size of the work, keep the markdown short enough to review, and keep the spec anchored to the code instead of writing it once and abandoning it.
 
-Project skills (`<project>-spec`) layer on top of this one and define the folder, language, diagram format and how the e2e task is run. Load both.
+Project skills (`<project>-spec`) layer on top of this one and define the folder, diagram format and how the e2e task is run. Load both.
+
+The spec and the tasks are written in PT-BR, the harness docs language (`harness/principles.md`), so the templates in `references/` are already in PT-BR. This file keeps the English section names: "What does not change" is "O que não muda" in the template, "Affected files" is "Arquivos afetados".
 
 ## Size the work first
 

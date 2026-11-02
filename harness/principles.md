@@ -13,6 +13,7 @@ The standard every Moonlight project follows, whoever writes the code: a person,
 - Trunk-based: a short-lived branch per issue, Conventional Commits, no AI co-author trailers (`git-workflow`).
 - One PR per issue, described with `pull-request-description`, always with a manual BDD walkthrough next to the automated checks.
 - When a skill and the code disagree, the code wins: fix the skill in the same PR.
+- **Language:** issues, PRs and project docs (README, `docs/`, specs and tasks) are written in Brazilian Portuguese (PT-BR). Commit messages are always in English, like code and identifiers. A project may add a second docs language, never replace PT-BR.
 
 ## 3. Nothing is done until it is verified
 
