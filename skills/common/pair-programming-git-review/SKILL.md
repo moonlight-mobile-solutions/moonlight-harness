@@ -5,6 +5,8 @@ description: "Pair-programming stance for an AI navigator: user drives, agent na
 
 # Pair Programming Skill
 
+**Strong model only:** the coordinator does the review. An executor may only run checks for it (see `subagent-delegation`).
+
 ## Overview & Stance (Default Mode)
 
 Pair programming is the default stance:
