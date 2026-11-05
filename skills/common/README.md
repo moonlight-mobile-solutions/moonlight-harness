@@ -15,4 +15,4 @@ Apply to every Moonlight project, whatever the stack. Stack skills build on thes
 | [`repository-pattern-persistence`](repository-pattern-persistence/SKILL.md) | Put persistence behind a repository, Python backend and Flutter frontend (skills/common/repository-pattern-persistence) |
 | [`subagent-delegation`](subagent-delegation/SKILL.md) | Delegate operational work to cheaper sub-agents and review it; set up the `executor` agent (skills/common/subagent-delegation) |
 | [`lgpd-brasil`](lgpd-brasil/SKILL.md) | Check personal-data handling against Brazil's LGPD: legal bases, data subject rights, incidents, international transfer (skills/common/lgpd-brasil) |
-| [`humanizer`](humanizer/SKILL.md) | Rewrite AI-sounding prose so it reads like the writer; written for English text (skills/common/humanizer) |
+| [`humanizer`](humanizer/SKILL.md) | Rewrite AI-sounding prose so it reads like the writer, in English and Brazilian Portuguese (skills/common/humanizer) |

@@ -1,10 +1,11 @@
 ---
 name: humanizer
 description: |
-  Rewrite AI-sounding text so it reads like the writer without changing what it says.
-  Use when editing or reviewing prose for AI tells: not-X-but-Y contrasts, one-line
-  closers, staged openers, forced triads, dashes everywhere, inflated claims, sales
-  language, stock AI words, bold labels, or filler. Based on Wikipedia's "Signs of AI writing."
+  Rewrite AI-sounding text (in English or Brazilian Portuguese) so it reads like the
+  writer without changing what it says. Use when editing or reviewing prose for AI tells:
+  not-X-but-Y contrasts, one-line closers, staged openers, forced triads, dashes
+  everywhere, inflated claims, sales language, stock AI words, bold labels, or filler.
+  Based on Wikipedia's "Signs of AI writing."
 license: MIT
 metadata:
   version: "3.1.0"
@@ -12,7 +13,7 @@ metadata:
 
 # Humanizer: remove AI writing patterns
 
-Copied from [blader/humanizer](https://github.com/blader/humanizer) v3.1.0 (MIT, Siqi Chen); the license is in [`LICENSE`](LICENSE). Dashes used as examples were replaced with commas, per the repo style.
+Copied from [blader/humanizer](https://github.com/blader/humanizer) v3.1.0 (MIT, Siqi Chen); the license is in [`LICENSE`](LICENSE). Dashes used as examples were replaced with commas, per the repo style. For Brazilian Portuguese (PT-BR) text, also load [`pt-br.md`](pt-br.md) for the equivalent watch lists, English calques, and examples mapped to §1 through §26.
 
 Rewrite AI-sounding text so it reads like the writer, not a chatbot. Keep what it says. Do not make anything up.
 
