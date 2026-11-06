@@ -8,6 +8,7 @@ description: "Writing structured GitHub issues: native Issue Type usage (Feature
 ## Rules
 
 - **No emojis** anywhere in the title or body.
+- **Run the `humanizer` skill on the title and body before creating the issue** (also load its `pt-br.md`, since issues are in PT-BR). Fix the AI tells without changing the template sections or what the text says.
 - **Titles are concise and specific**: describe the problem/feature in one sentence, skip verbs like "fix"/"add" unless they clarify meaning.
 - **Plain PT-BR** (the harness language for issues, `harness/principles.md`), present tense, active voice. The templates below are already in PT-BR.
 - **Use GitHub's native Issue Type** (`Feature`, `Bug`, `Enhancement`, `Task`) via `--type` at creation time: don't rely on labels for type; reserve labels for area/priority tagging.

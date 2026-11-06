@@ -10,6 +10,7 @@ description: "Structured pull request description template (context/issue link, 
 - No emojis anywhere in the description.
 - No filler sentences ("This PR fixes...", "As described in the issue..."). Be direct and specific.
 - No em-dashes as punctuation separators: use commas, parentheses or colons.
+- **Run the `humanizer` skill on the title and body before opening the PR** (also load its `pt-br.md`, since PRs are in PT-BR). Fix the AI tells without changing the template sections or what the text says.
 - Present tense, active voice. Write the title and body in PT-BR, the harness language for PRs (`harness/principles.md`), which is why the section headers below are in PT-BR.
 - Every section below is mandatory.
 - **"Como testar" always has two parts.** Commands (`pytest`, `flutter test`, `alembic upgrade head`) belong to "Verificação automatizada" and never count as the manual walkthrough.
