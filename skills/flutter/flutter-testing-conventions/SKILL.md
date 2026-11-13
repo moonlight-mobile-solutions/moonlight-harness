@@ -131,6 +131,17 @@ testWidgets('tapping the CTA navigates without a ProviderNotFoundException', (te
 
 The sub-component test recreates the provider tree correctly from scratch, which is exactly what masks a scoping bug that only exists in the real production tree: only mounting the real Page (or manual on-device verification) exposes it.
 
+### Reading the style of a `Text.rich`: the widget's style is in the child span
+
+`Text.rich(span, style: ...)` builds a `RichText` whose root `TextSpan` carries the merged `DefaultTextStyle`, and the span you passed becomes its only child. A test that reads `tester.widget<RichText>(...).text.style` gets the theme default (often 14), not the widget's style, so it fails for a small style and passes by coincidence for one of the same size.
+
+```dart
+final root = tester.widget<RichText>(find.byWidgetPredicate((w) => w is RichText && w.text.toPlainText().contains('terms'))).text as TextSpan;
+final sentenceStyle = (root.children!.single as TextSpan).style;
+```
+
+Assert a style that differs from the default in at least one case, so a test reading the wrong span cannot pass.
+
 ## Integration/E2E Tests (Maestro or similar)
 
 ### Conventions
