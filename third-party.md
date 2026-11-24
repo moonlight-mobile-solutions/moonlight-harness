@@ -9,11 +9,14 @@ Skills Moonlight projects use but this repo does not maintain or copy. Install t
 | `vite-react-best-practices` | web | https://github.com/claudiocebpaz/vite-react-best-practices (MIT) |
 | `design-taste-frontend` | web | https://github.com/Leonxlnx/taste-skill (MIT). Art direction and browser checks for landing pages, sites and dashboards; web only, needs Node 22+ and Chrome |
 | `security-audit` | all | https://github.com/cloudflare/security-audit-skill (MIT). Security guidance by default; a six-phase codebase audit with reports when asked explicitly. Needs Node, parallel sub-agents and an OS sandbox to run target code |
+| `firebase-*`, `firestore-rules-creation`, `extension-to-functions-codebase`, `xcode-project-setup` | all | https://github.com/firebase/agent-skills (Apache-2.0). Official Firebase skills: CLI and projects, Auth, Firestore and rules, Hosting, App Hosting, Data Connect, Crashlytics, Analytics, Remote Config, AI Logic. Also ships as the `firebase@firebase` Claude Code plugin, which adds the Firebase MCP server |
 | `skill-creator` | all | Anthropic skills, to write new skills in the right format |
 
 Install `design-taste-frontend` from a clone so `git pull` updates it: `git clone https://github.com/Leonxlnx/taste-skill && ./taste-skill/install.sh --all-agents`. Without a clone: `npx skills add https://github.com/Leonxlnx/taste-skill --skill design-taste-frontend`.
 
 Install `security-audit` from a clone too. The repo has no installer, so link the skill folder into each agent: `git clone https://github.com/cloudflare/security-audit-skill && ln -s "$PWD/security-audit-skill/skills/security-audit" ~/.claude/skills/security-audit` (same for `~/.codex/skills`). Without a clone: `npx skills add https://github.com/cloudflare/security-audit-skill --skill security-audit --global`.
+
+Install the Firebase skills from a clone too. The repo has no installer, so link each folder of `skills/` into each agent: `git clone https://github.com/firebase/agent-skills && for s in agent-skills/skills/*/; do ln -s "$PWD/${s%/}" ~/.claude/skills/$(basename "$s"); done` (same for `~/.codex/skills`). Without a clone: `npx skills add firebase/skills`. Keep the Claude Code plugin (`claude plugin install firebase@firebase`) if you use the Firebase MCP server; the links do not bring it.
 
 `spec-driven-development` is adapted from [jjeanjacques10/skills](https://github.com/jjeanjacques10/skills) (MIT); attribution is in the skill.
 
